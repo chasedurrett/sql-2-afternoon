@@ -208,16 +208,15 @@ join products p on
 p.id = o.product_id
 where o.product_id = 1;
 
-
--- i dont think these are correct lol 
 select * from orders o 
 join users u on
 u.id = o.users_id
 join products p on 
 p.id = u.id
 
-select count(p) from orders o 
+select count(*), u.name from orders o 
 join users u on
 u.id = o.users_id
 join products p on 
 p.id = u.id
+group by u.name 
